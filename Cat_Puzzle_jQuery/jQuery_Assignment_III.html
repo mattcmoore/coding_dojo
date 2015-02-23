@@ -1,0 +1,60 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Sortable - Default functionality</title>
+  <link rel="stylesheet" href="jQuery_Assignment_III.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+      $("#cats").hide();
+      $("#ninjas li img").click(function(){ //when you click on class ninja
+        $(this).attr("src", "images/cat"+ $(this).attr("class") + ".jpg"); //replace src attribute in (this) with "images/cat" + "*ninjas li img class (which is a number 1-5)*" + ".jpg" //
+        });
+      var array = [];
+      $("#ninjas li img").each(function() {
+      array.push($(this).attr("src"));
+      }); // stores img src values from each #ninjas li img into an array
+      console.log(array);
+      $("button").click(function(){
+        $(array).each(function(){
+          $("#ninjas li img").attr("src")
+        }); // puts img src values from array back into #ninjas li img (WHY THE HELL DOESN"T THIS WORK?!?!)
+      }); //end document listener  
+      console.log($("#ninjas li img"));
+    }); // end document ready
+</script>
+</head>
+<body> 
+  <ul id="sortable">
+    <li><img src="images/ninja1.jpg" alt="ninja"></li>
+    <li><img src="images/ninja2.jpg" alt="ninja"></li>
+    <li><img src="images/ninja3.jpg" alt="ninja"></li>
+    <li><img src="images/ninja4.jpg" alt="ninja"></li>
+    <li><img src="images/ninja5.jpg" alt="ninja"></li>
+  </ul> 
+
+  <ul id="ninjas">
+    <li><img src="images/ninja1.jpg" alt="ninja" class="1"></li>
+    <li><img src="images/ninja2.jpg" alt="ninja" class="2"></li>
+    <li><img src="images/ninja3.jpg" alt="ninja" class="3"></li>
+    <li><img src="images/ninja4.jpg" alt="ninja" class="4"></li>
+    <li><img src="images/ninja5.jpg" alt="ninja" class="5"></li>
+  </ul>
+
+  <ul id="cats">
+    <li><img src="images/cat1.jpg" alt="cat" class="1"></li>
+    <li><img src="images/cat2.jpg" alt="cat" class="2"></li>
+    <li><img src="images/cat3.jpg" alt="cat" class="3"</li>
+    <li><img src="images/cat4.jpg" alt="cat" class="4"</li>
+    <li><img src="images/cat5.jpg" alt="cat" class="5"</li>
+  </ul>
+
+  <button type="button" value="reset">RESET</button>
+</body>
+</html>

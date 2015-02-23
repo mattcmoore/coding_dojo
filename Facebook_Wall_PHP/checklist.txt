@@ -1,0 +1,80 @@
+Registration
+-- errors block
+	if session['errors'] has an array in it then unpack the elements of the array one-by-one with a foreach loop
+	if(isset($_SESSION['errors'])){
+		foreach($_SESSION['errors'] as $error)
+		echo "<p>".$error."</p>"
+	} 
+-- success block
+	if session['success'] has an array in it, then unpack the elements of the array one-by-one with a foreach loop
+	if(isset($_SESSION['success'])){
+		foreach($_SESSION['errors'] as $error){
+			echo "<p>".$echo."</p>"
+		}
+
+	}
+-- Registration Form (action=process.php method=post)
+Make a bunch of text input fields in the form. Set the name attributes of the inputs you make to the following names:
+	- First_name
+	- Last_name
+	- email
+	- password
+	- confirm password
+	- (hidden) created_at
+	- (hidden) name=action value=registration
+Finish up with a submit button	
+	- Submit button
+--login errors block
+	if(isset($_SESSION['login'])){
+		foreach($_SESSION['login'] as $loginerror){
+		echo "<p>".$loginerror."</p>"
+		}
+	}	
+-- Login Form (action=process.php method=post)
+	-email
+	-password
+	-(hidden) name= action value=login
+	- submit button
+
+Process
+Create your controller
+
+if(isset($_POST['first_name'])&& $_POST['action']='first_name')
+{
+	()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

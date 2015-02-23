@@ -1,0 +1,22 @@
+#sortable { 
+	list-style-type: none;
+	margin: 20px ;
+	float: left;
+}
+	#sortable li { 
+		margin: 1px;
+	}
+
+#ninjas {
+	list-style-type: none;
+	margin: 20px;
+	float: left;
+}
+
+#cats {
+	display: hidden;
+}
+
+
+
+ 

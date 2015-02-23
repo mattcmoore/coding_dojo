@@ -1,0 +1,52 @@
+-post a form
+-when you submit a form...enter submit data into database with insert into query
+-have it set up so that on page load all the entries in the database display as notes
+	if(isset($_POST))
+			//new note is the name of the text area input for the new note textbox
+		if(isset($_POST['new_note']){
+			if($_POST['new_nost'] != ""){
+				post_note();
+			}
+		
+		}
+
+// this shit right heree, submits a form and then retrieves data 
+$("form").submit(function(){
+	$.post($("this").attr("action"),
+			$("this").serialize(),
+			function(data){
+				console.log(data);
+			},
+			"json")
+})
+
+isset --> KEYS
+empty --> VALUES
+
+<?php
+if(isset($_POST)){
+	if($_POST['whatever'] != ""){
+		add_note();
+	};
+};
+
+function add_note(){
+	
+}
+?>
+
+Process page...
+make is so that if you type the name into the form called (name) it returns values where the name matches from the database.
+
+Do this like so.
+
+if(isset($_POST){
+	if($_POST['name'] != ""){
+		display_results();
+	}
+}
+
+function display_note(){
+	$query="SELECT*FROM leads WHERE leads.first_name LIKE '{$_POST['name']}%' OR leads.last_name LIKE '{$_POST['name']}%';";
+	$data=fetch_all($query);
+}
